@@ -1,0 +1,42 @@
+@ToDos_HostAddress = http://localhost:5177
+
+GET {{ToDos_HostAddress}}/todos
+Accept: application/json
+
+###
+
+POST {{ToDos_HostAddress}}/todos
+content-type: application/json
+
+{
+    "id" : 1,
+    "title": "First todo",
+    "description": "First things first do some stuff",
+    "dueDate": "2024-08-01",
+    "isCompleted": false
+}
+###
+
+POST {{ToDos_HostAddress}}/todos
+content-type: application/json
+
+{
+    "id" : 2,
+    "title": "Second todo",
+    "description": "Do this second",
+    "dueDate": "2024-08-02",
+    "isCompleted": false
+}
+###
+
+
+### Redirects tasks => todo, thanks to the url rewrite middleware added to the app
+GET {{ToDos_HostAddress}}/tasks/
+Accept: application/json
+
+###
+
+GET {{ToDos_HostAddress}}/todos/1
+Accept: application/json
+
+###
