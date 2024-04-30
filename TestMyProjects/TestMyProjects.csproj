@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDos\ToDos.csproj" />
+    <ProjectReference Include="..\MyProjects\MyProjects.csproj" />
   </ItemGroup>
 
 </Project>
